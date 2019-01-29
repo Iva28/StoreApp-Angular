@@ -1,0 +1,7 @@
+<h4> Products: </h4>
+
+<app-product *ngFor='let p of products' [product]='p' (onRemoveProduct)='removeProduct($event)'></app-product>
+
+<br><hr/><br>
+
+<app-productform></app-productform>

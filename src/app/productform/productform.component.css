@@ -1,0 +1,46 @@
+
+form{
+    width: 300px;
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+form div {
+    margin: 5px;
+}
+
+.inputgroup {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+
+.submitGroup {
+    display: grid;
+    margin: 5px;
+}
+
+h4 {
+    text-align: center;
+}
+
+.errors span {
+    display: none;
+}
+
+input[type='text'],input[type='number'] {
+  width: 173px;
+} 
+
+input[type='date'] {
+    width: 172px;
+}
+
+select{
+    width: 177px;
+}
+
+input[type='checkbox'] {
+    margin-left: 0;
+}
+

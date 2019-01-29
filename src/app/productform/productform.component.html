@@ -1,0 +1,43 @@
+<form [formGroup]='productForm' (ngSubmit)='onSubmit()'>
+    <div class="inputgroup">
+      <label>Title: </label>
+      <input type="text" formControlName='title'>
+      <span class='errors' *ngIf='title.invalid && (title.dirty || title.touched)'>
+        <span *ngIf='title.errors.required'>title is required</span>
+      </span>
+    </div>
+    <div class="inputgroup">
+      <label>Price: </label>
+      <input type="number" formControlName='price'>
+      <span class='errors' *ngIf='price.invalid && (price.dirty || price.touched)'>
+        <span *ngIf='price.errors.required'>price is required</span>
+      </span>
+    </div>
+    <div class="inputgroup">
+        <label>Quantity: </label>
+        <input type="number" formControlName='quantity'>
+        <span class='errors' *ngIf='quantity.invalid && (quantity.dirty || quantity.touched)'>
+          <span *ngIf='quantity.errors.required'>quantity is required</span>
+        </span>
+      </div>
+    <div class="inputgroup">
+      <label>Category: </label>
+      <select formControlName='category'>
+        <option *ngFor='let c of categories' [ngValue]='c'>{{c}}</option>
+      </select>
+    </div>
+    <div class="inputgroup">
+      <label>Date: </label>
+      <input type="date" formControlName='date'>
+    </div>
+    <div class="inputgroup">
+        <label>Available: </label>
+        <input type="checkbox" formControlName='available'>
+      </div>
+    <div class="inputgroup">
+      <input type="submit">
+    </div>
+  </form>
+
+
+
