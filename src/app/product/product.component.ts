@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +9,7 @@ import { Product } from '../models/product';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   @Input()
   product: Product;
@@ -24,6 +25,6 @@ export class ProductComponent implements OnInit {
   }
 
   editProduct() {
-
+    this.router.navigate(['/products/edit', this.product.id]);
   }
 }

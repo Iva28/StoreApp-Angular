@@ -32,4 +32,19 @@ export class ProductService {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
   }
+
+  getProduct(id: number) {
+    return this.products.find((b) => b.id === id);
+  }
+
+  updateProduct(product: Product) {
+     const pr = this.getProduct(product.id);
+     pr.id = product.id;
+     pr.title = product.title;
+     pr.quantity = product.quantity;
+     pr.price = product.price;
+     pr.date = product.date;
+     pr.available = product.available;
+     pr.category = product.category;
+  }
 }
