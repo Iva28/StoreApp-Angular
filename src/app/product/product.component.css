@@ -1,5 +1,49 @@
 
-span:hover {
-    cursor: pointer;
-    color: green;
+a {
+    text-decoration: none;
+    color: black;
+    margin:5px;
+}
+
+a:hover{
+    color: teal;
+}
+
+button{
+    margin: 5px;
+}
+
+.modal {
+    display: block;
+    background-color: rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.modal-content {
+    padding: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 230px;
+    background-color: whitesmoke;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: rgb(41,131,169);
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -9,15 +10,19 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
-  @Input()
   product: Product;
+
 
   @Output()
   onRemoveProduct: EventEmitter<Product> = new EventEmitter();
 
   ngOnInit() {
+    this.route.params.forEach((params) => {
+      const id = +params['id'];
+      this.product = this.productService.getProduct(id);
+   });
   }
 
   removeProduct() {

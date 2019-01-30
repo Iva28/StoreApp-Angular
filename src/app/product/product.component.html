@@ -1,6 +1,11 @@
-<div>
-  <span>{{product.title}} --- Category: {{product.category}}, Price:{{product.price}}, Quantity: {{product.quantity}} </span>
-  <button (click)='removeProduct()'>x</button>
-  <button (click)='editProduct()'>Edit</button>
-<!--<a routerLink='/products/edit/{{product.id}}'>edit</a>-->
+<div class="modal">
+    <div class="modal-content">
+        <button class="closeBtn">x</button>
+        {{product.title}}
+    </div>
 </div>
+
+
+<!--   <button (click)='removeProduct()'>x</button>
+  <button (click)='editProduct()'>Edit</button> -->
+<!--<a routerLink='/products/edit/{{product.id}}'>edit</a>-->
