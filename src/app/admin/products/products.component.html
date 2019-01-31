@@ -1,23 +1,24 @@
-
-
 <h4> Products: </h4>
 
 <ul>
     <li *ngFor='let p of products'>
       {{p.title}}
-      <a routerLink='/admin/products/new'>add</a>
       <a routerLink='/admin/products/edit/{{p.id}}'>edit</a>
     </li>
 </ul>
 
+<a routerLink='/admin/products/new'>add</a>
+
+<router-outlet></router-outlet>
+
 
 
 <!-- <app-product *ngFor='let p of products' [product]='p' (onRemoveProduct)='removeProduct($event)'></app-product>
-<br>
-<button (click)='addProduct()'>Add</button>
-<br>
-<br><hr/><br> -->
-
+  <br>
+  <button (click)='addProduct()'>Add</button>
+  <br>
+  <br><hr/><br> -->
+  
 
 <!--   <button (click)='removeProduct()'>x</button>
   <button (click)='editProduct()'>Edit</button> -->
