@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  products: Product[];
+
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
+    this.products = this.productService.getProducts();
   }
 
+  removeProduct(product: Product) {
+    this.productService.removeProduct(product);
+  }
+
+  /* editProduct() {
+    this.router.navigate(['/products/edit', this.product.id]);
+  }
+
+    removeProduct() {
+    this.onRemoveProduct.emit(this.product);
+  }
+
+  */
+
+
+  addProduct() {
+    this.router.navigate(['admin/products/new']);
+  }
 }

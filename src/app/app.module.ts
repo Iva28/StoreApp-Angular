@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
-import { ProductformComponent } from './productform/productform.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -14,13 +14,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     ProductComponent,
     ProductsComponent,
-    ProductformComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule
+   /*  FormsModule,
+    ReactiveFormsModule */
   ],
   providers: [],
   bootstrap: [AppComponent]

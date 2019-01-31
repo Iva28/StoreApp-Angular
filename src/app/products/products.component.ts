@@ -12,17 +12,11 @@ export class ProductsComponent implements OnInit {
 
   products: Product[];
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.products = this.productService.getProducts();
   }
 
-  removeProduct(product: Product) {
-    this.productService.removeProduct(product);
-  }
 
-  addProduct() {
-    this.router.navigate(['/products/add']);
-  }
 }

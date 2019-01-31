@@ -14,7 +14,6 @@ export class ProductComponent implements OnInit {
 
   product: Product;
 
-
   @Output()
   onRemoveProduct: EventEmitter<Product> = new EventEmitter();
 
@@ -25,11 +24,7 @@ export class ProductComponent implements OnInit {
    });
   }
 
-  removeProduct() {
-    this.onRemoveProduct.emit(this.product);
-  }
-
-  editProduct() {
-    this.router.navigate(['/products/edit', this.product.id]);
+  closeModal() {
+    this.router.navigate(['/products']);
   }
 }
