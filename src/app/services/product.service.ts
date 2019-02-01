@@ -4,13 +4,16 @@ import { Product } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
 
   products: Product[] = [
-    new Product(1, 'Orange', 7, 'Fruits', true, 32, new Date()),
+     new Product(1, 'Orange', 7, 'Fruits', true, 32, new Date()),
     new Product(2, 'Apple', 3, 'Fruits', true, 40, new Date()),
     new Product(3, 'Carrot', 5, 'Vegetables', true, 50, new Date())
   ];
+
+  productsBasket: { [key: number]: number; } = {};
 
   categories: string[] = ['Fruits', 'Vegetables'];
 
@@ -46,5 +49,19 @@ export class ProductService {
      pr.date = product.date;
      pr.available = product.available;
      pr.category = product.category;
+  }
+
+  addToBasket(id: number) {
+    const keys = Object.keys(this.productsBasket);
+    if (keys.includes(id.toString())) {
+      const values = Object.keys(this.productsBasket).map(key => id);
+      this.productsBasket[values[0]]++;
+    } else {
+      this.productsBasket[id] = 1;
+    }
+  }
+
+  getAllProducts() {
+    return this.productsBasket;
   }
 }

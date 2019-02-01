@@ -33,8 +33,9 @@
     <div class="inputgroup">
         <label>Available: </label>
         <input type="checkbox" formControlName='available'>
-      </div>
-    <div class="inputgroup">
+    </div>
+    <div class="inputgroup" style='margin-left: 50px;'>
       <input type="submit" value="{{btn}}">
+      <button (click)='cancel()'>Cancel</button>
     </div>
   </form>

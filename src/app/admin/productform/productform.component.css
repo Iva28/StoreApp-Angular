@@ -44,3 +44,11 @@ input[type='checkbox'] {
     margin-left: 0;
 }
 
+button {
+    width: 90px;
+    margin-left: 10px;
+}
+
+.btns {
+    margin-left: 50px;
+}

@@ -18,22 +18,15 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  addProduct() {
+    this.router.navigate(['admin/products/new']);
+  }
+
   removeProduct(product: Product) {
     this.productService.removeProduct(product);
   }
 
-  /* editProduct() {
-    this.router.navigate(['/products/edit', this.product.id]);
-  }
-
-    removeProduct() {
-    this.onRemoveProduct.emit(this.product);
-  }
-
-  */
-
-
-  addProduct() {
-    this.router.navigate(['admin/products/new']);
+  editProduct(id: number) {
+    this.router.navigate(['/admin/products/edit/' + id]);
   }
 }

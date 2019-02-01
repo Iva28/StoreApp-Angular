@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { AdminModule } from './admin/admin.module';
+import { BasketComponent } from './basket/basket.component';
 // import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
@@ -15,7 +16,8 @@ import { AdminModule } from './admin/admin.module';
     AppComponent,
     ProductComponent,
     ProductsComponent,
-    HomeComponent
+    HomeComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -18,5 +17,7 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
-
+   AddToBasket(id: number) {
+    this.productService.addToBasket(id);
+  }
 }
