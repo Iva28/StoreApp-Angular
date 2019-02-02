@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
-
 
 @Component({
   selector: 'app-basket',
@@ -12,15 +10,14 @@ export class BasketComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
-  products: Product[] = [];
-
-  productsBasket: { [key: string]: number; } = {};
+  products: Array<any> = [];
 
   ngOnInit() {
     const ps = this.productService.getAllProducts();
-    Object.keys(ps).forEach(p => {
+      Object.keys(ps).forEach(p => {
       const product = this.productService.getProduct(+p);
-      this.productsBasket[product.title] = ps[p];
+      const pr = {title: product.title, quantity: ps[p], totalPrice: (product.price * ps[p])};
+      this.products.push(pr);
     });
   }
 }

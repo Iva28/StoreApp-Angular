@@ -34,7 +34,7 @@ button{
     right: 0;
     margin: auto;
     width: 400px;
-    height: 230px;
+    height: 200px;
     background-color: whitesmoke;
 }
 
@@ -44,7 +44,19 @@ button{
     right: 2px;
     border: none;
     background-color: transparent;
-    outline: none;
     color: black;
 }
 
+.content {
+   padding-top: 15px;
+   padding-left: 20px;
+}
+
+.content span {
+    display: block;
+    margin: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+}

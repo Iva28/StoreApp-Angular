@@ -7,7 +7,7 @@ import { BasketComponent } from './basket/basket.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'products'},
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
   { path: 'basket', component: BasketComponent},
   { path: 'products', component: ProductsComponent, children: [
     { path: ':id', component: ProductComponent}]}

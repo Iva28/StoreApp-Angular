@@ -65,7 +65,7 @@ export class ProductformComponent implements OnInit {
       } else {
         this.productService.updateProduct(pr);
       }
-      this.productForm.reset();
+      this.router.navigate(['/admin/products']);
     }
   }
 

@@ -1,7 +1,15 @@
 <div class="modal">
     <div class="modal-content">
         <button class="closeBtn" (click)='closeModal()'>x</button>
-        {{product.title}} -  {{product.price}} - {{product.quantity}} - {{product.category}}
+        <div class="content">
+            <span>Title: {{product.title}}</span> 
+            <span>Category: {{product.category}}</span>
+            <span>Price: {{product.price}} $</span>
+            <span>Quantity: {{product.quantity}}</span>
+            <span *ngIf="product.available"> Available: yes</span>
+            <span *ngIf="!product.available"> Available: no</span>
+            <span>Date: {{ product.date | date :  "dd/MM/y" }}</span>
+        </div>
     </div>
 </div>
 

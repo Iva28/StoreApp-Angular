@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: lightslategrey;
+}
+
+button {
+    margin-left: 5px;
+}
+
+li {
+    margin:5px;
+}

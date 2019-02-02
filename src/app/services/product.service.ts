@@ -7,17 +7,18 @@ import { Product } from '../models/product';
 
 export class ProductService {
 
+  categories: string[] = ['Fruits', 'Vegetables', 'Sweets'];
+
   products: Product[] = [
-     new Product(1, 'Orange', 7, 'Fruits', true, 32, new Date()),
-    new Product(2, 'Apple', 3, 'Fruits', true, 40, new Date()),
-    new Product(3, 'Carrot', 5, 'Vegetables', true, 50, new Date())
+    new Product(1, 'Orange', 5, this.categories[0], true, 32, new Date()),
+    new Product(2, 'Carrot', 6, this.categories[1], true, 40, new Date()),
+    new Product(3, 'Chocolate', 7, this.categories[2], false, 50, new Date())
   ];
 
   productsBasket: { [key: number]: number; } = {};
 
-  categories: string[] = ['Fruits', 'Vegetables'];
-
-  constructor() { }
+  constructor() {
+   }
 
   getProducts() {
     return this.products;
@@ -64,4 +65,5 @@ export class ProductService {
   getAllProducts() {
     return this.productsBasket;
   }
+
 }

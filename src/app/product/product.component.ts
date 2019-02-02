@@ -14,9 +14,6 @@ export class ProductComponent implements OnInit {
 
   product: Product;
 
-  @Output()
-  onRemoveProduct: EventEmitter<Product> = new EventEmitter();
-
   ngOnInit() {
     this.route.params.forEach((params) => {
       const id = +params['id'];

@@ -5,10 +5,10 @@
       {{p.title}}
       <!-- <a routerLink='/admin/products/edit/{{p.id}}'>edit</a> --> 
       <button (click)='editProduct(p.id)'>edit</button>
-      <button (click)='removeProduct(p)'>x</button>
+      <button (click)='removeProduct(p)'>remove</button>
     </li>
-</ul>
-
-<a routerLink='/admin/products/new'>add</a>
+  </ul>
+  
+<button (click)='addProduct()'>New Product</button>
 
 <router-outlet></router-outlet>

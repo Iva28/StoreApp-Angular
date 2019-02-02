@@ -3,7 +3,7 @@
 <ul>
     <li *ngFor='let p of products'>
       <a routerLink='/products/{{p.id}}'>{{p.title}}</a> 
-      <button (click)='AddToBasket(p.id)'>+</button>
+      <button (click)='AddToBasket(p.id)'><i class="fa fa-shopping-basket"></i> Add to Basket</button>
     </li>
 </ul>
 

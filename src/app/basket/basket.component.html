@@ -1,5 +1,8 @@
 <h4> Products: </h4>
 
 <ul>
-    <li *ngFor='let item of productsBasket | keyvalue'>{{item.key}}:{{item.value}}</li>
+    <li *ngFor='let item of products'>Product: {{item.title}}, Quantity: {{item.quantity}}, Total Price: {{item.totalPrice}} $</li>
 </ul>
+
+
+<!-- <ul><li *ngFor='let item of productsBasket | keyvalue'>{{item.key}}:{{item.value}}</li></ul> -->
