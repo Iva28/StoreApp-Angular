@@ -6,9 +6,9 @@
             <span>Category: {{product.category}}</span>
             <span>Price: {{product.price}} $</span>
             <span>Quantity: {{product.quantity}}</span>
-            <span *ngIf="product.available"> Available: yes</span>
-            <span *ngIf="!product.available"> Available: no</span>
-            <span>Date: {{ product.date | date :  "dd/MM/y" }}</span>
+            <span *ngIf="product.available"> Available: Yes</span>
+            <span *ngIf="!product.available"> Available: No</span>
+            <span>Date: {{ product.date | date :  "MM/dd/y" }}</span>
         </div>
     </div>
 </div>

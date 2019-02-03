@@ -11,10 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductformComponent implements OnInit {
 
-  product: Product;
+  product = new Product();
+  categories: string[];
   btn: string;
 
-  categories: string[];
+  productForm: FormGroup;
+  currentDate = new Date();
 
   get title() {return this.productForm.get('title'); }
   get price() {return this.productForm.get('price'); }
@@ -23,7 +25,6 @@ export class ProductformComponent implements OnInit {
   get quantity() {return this.productForm.get('quantity'); }
   get date() {return this.productForm.get('date'); }
 
-  productForm: FormGroup;
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private fb: FormBuilder, private router: Router) { }
 
@@ -35,9 +36,10 @@ export class ProductformComponent implements OnInit {
         this.product = this.productService.getProduct(id);
         this.btn = 'Save';
       } else {
-        this.product = new Product();
+        // this.product = new Product();
         this.btn = 'Add';
       }
+
       this.productForm = this.fb.group({
         title: [this.product.title, [Validators.required]],
         price: [this.product.price, [Validators.required]],
@@ -46,6 +48,11 @@ export class ProductformComponent implements OnInit {
         quantity: [this.product.quantity, [Validators.required]],
         date: [this.product.date, [Validators.required]]
       });
+
+      const d = new Date(this.product.date);
+      // const currentDate = this.product.date.toISOString().substring(0, 10);
+      const currentDate = d.toISOString().split('T')[0];
+      this.productForm.controls['date'].setValue(currentDate);
     });
   }
 
@@ -67,9 +74,5 @@ export class ProductformComponent implements OnInit {
       }
       this.router.navigate(['/admin/products']);
     }
-  }
-
-  cancel() {
-    this.router.navigate(['/admin/products']);
   }
 }

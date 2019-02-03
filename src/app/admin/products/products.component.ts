@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
 
   removeProduct(product: Product) {
     this.productService.removeProduct(product);
+    this.router.navigate(['/admin/products']);
   }
 
   editProduct(id: number) {

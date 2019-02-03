@@ -13,11 +13,13 @@ export class BasketComponent implements OnInit {
   products: Array<any> = [];
 
   ngOnInit() {
-    const ps = this.productService.getAllProducts();
+    const ps = this.productService.getBasketProducts();
       Object.keys(ps).forEach(p => {
       const product = this.productService.getProduct(+p);
-      const pr = {title: product.title, quantity: ps[p], totalPrice: (product.price * ps[p])};
-      this.products.push(pr);
+      if (product != null) {
+        const pr = {title: product.title, quantity: ps[p], totalPrice: (product.price * ps[p])};
+        this.products.push(pr);
+      }
     });
   }
 }

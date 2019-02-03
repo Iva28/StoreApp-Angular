@@ -17,8 +17,7 @@ export class ProductService {
 
   productsBasket: { [key: number]: number; } = {};
 
-  constructor() {
-   }
+  constructor() { }
 
   getProducts() {
     return this.products;
@@ -28,22 +27,23 @@ export class ProductService {
     return this.categories;
   }
 
+  getProduct(id: number) {
+    return this.products.find((b) => b.id === id);
+  }
+
   addProduct(product: Product) {
+    product.id = this.products.length + 1;
     this.products.push(product);
   }
 
   removeProduct(product: Product) {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
-  }
-
-  getProduct(id: number) {
-    return this.products.find((b) => b.id === id);
+    delete this.productsBasket[product.id];
   }
 
   updateProduct(product: Product) {
      const pr = this.getProduct(product.id);
-     pr.id = product.id;
      pr.title = product.title;
      pr.quantity = product.quantity;
      pr.price = product.price;
@@ -53,17 +53,14 @@ export class ProductService {
   }
 
   addToBasket(id: number) {
-    const keys = Object.keys(this.productsBasket);
-    if (keys.includes(id.toString())) {
-      const values = Object.keys(this.productsBasket).map(key => id);
-      this.productsBasket[values[0]]++;
+    if (this.productsBasket.hasOwnProperty(id)) {
+      this.productsBasket[id]++;
     } else {
       this.productsBasket[id] = 1;
     }
   }
 
-  getAllProducts() {
+  getBasketProducts() {
     return this.productsBasket;
   }
-
 }
